@@ -1,0 +1,132 @@
+
+
+        h1{
+        position: absolute;
+        top: 3.5%;
+        left: 42%;
+ 
+   
+        }
+         h2{
+        position: absolute;
+         font-size: 1.5rem;
+        top: 4.2%;
+        left: 57%;
+        border-radius: 10px;
+         }
+         h3{
+            position: absolute;
+            font-size: 1.5rem;
+           top: 8%;
+           left: 70%;
+           size: 30px; 
+        }
+        h4{
+            position: absolute;
+            font-size: 1.5rem;
+           top: 13%;
+           left: 60%;
+           size: 30px; 
+           margin-top:10px;
+        }
+        button{
+            font-size: 2rem;
+            padding: 20px 12px;
+            border-radius: 20px;
+            background-color: #e41f1f;
+            color: aliceblue;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items:center;
+            min-width: 50px;
+        }
+        img{
+            width: 600px;
+            height: 600px;
+            position: absolute;
+           top: 50%;
+           left: 0%;
+           margin-top:10px;
+           
+        }
+        
+        .img2{
+            width: 600px;
+            height: 600px;
+            transform: translate(-50%, -50%);
+           top: 8%;
+           left:51%;
+           margin-top:10px;
+           z-index: -2;
+        }
+        .img3{
+            width: 280px;
+            height: 83px;
+            transform: translate(-50%, -50%);
+           top: 5.5%;
+           left:58%;
+           margin-top:10px;
+           z-index: -1;
+        }
+body {
+
+    text-align:center ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55vh;
+    margin: 150px;
+    background-image:url(03.jpg);background-size:cover ;
+
+}
+
+#game-container {
+    width: 600px;
+    height: 600px;
+    background-color: #e41f1f;
+    justify-content: space-between;
+    padding: 7px;
+    border-radius: 5px;
+    border: 2px solid #333;
+    background-color: aliceblue;
+    background-image:url(03.jpg);background-size:cover ;
+    margin-top: 200px;
+    margin-left: 120px;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: repeat(6,1fr);
+    gap: 10px;
+    grid-template-areas:
+  
+}
+
+.gem.highlighted {
+    border: 2px dashed black;
+}
+
+.ball {
+    width: 100%;
+    height: 100%;
+    border-radius: 30%;
+    left: 15%;
+    top: 30%;
+    cursor: pointer;
+    justify-content: space-between;
+    transition: background-color 0.3s, transform 0.2s, opacity 0.2s;
+    border: 2px solid #333;
+    background-color: aliceblue;
+    border: 1px solid #999;
+}
+.ball {
+    /* ... 其他样式 ... */
+    transition: transform 0.2s ease-in-out; /* 添加过渡效果 */
+}
+.ball.dragging {
+    transform: scale(1.1); /* 在拖拽时放大珠子 */
+    z-index: 1; /* 确保在拖拽时位于其他元素上方 */
+}
+.ball:before {
+    background-image: url('05.jpg');
+
+}

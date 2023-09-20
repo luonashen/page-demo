@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device,inital-scale1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>三消滑珠子遊戲</title>
+ 
+</head>
+<body text="#3e3d40">
+    
+        
+    
+    <div>
+        <h1>三消滑珠子遊戲</h1>
+        <hr/>
+    </div>
+    <div id="container"></div>
+   
+    <div id="game-container">
+        
+        <h3>消珠計數：<span id="score">0</span></h3>
+        <h4>倒數計時：<span id="timer">300</span>秒</h4>
+    </div>
+    <div id="info">
+    </div>
+    <div id="controls">
+        <button id="pauseButton">❚❚ </button>
+        <button id="playButton">▶︎</button>
+    </div>
+    <div class="ball-border">
+        <div class="b-bottom"></div>
+       
+
+    <img class="img1" src="06.png" alt="">
+   <img class="img2" src="07.png" alt="">
+   <img class="img4" src="09.png" alt="">
+   <img class="img5" src="14.png" alt="">
+   <img class="img6" src="15.png" alt="">
+   <img class="img7" src="18.png" alt="">
+   <img class="img8" src="19.png" alt="">
+   <img class="img9" src="15.png" alt="">
+
+   <div class="wrap"></div>
+   <img class="img10" src="20-01.png" alt="">
+
+
+</ul></div>		<div id="search">
+    <script src="script.js"></script>
+    <style>
+        *{
+            margin: 0;
+            podding:0;
+            box-sizing: border-box;
+        }
+        
+        .warp{
+            position: absolute;
+            height: 150px;
+            bottom: 70px; 
+            left: 0;
+            width: 100%;  
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+            
+        }
+        
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+           
+           
+        }
+       
+        
+        #menu {
+            position: relative;
+            float: left;
+            padding: 0 20px;
+            border-radius: 3px;
+            background-image: linear-gradient(transparent, rgb(253, 72, 0));
+            margin-top: -355px;
+            margin-left: -390px;
+           
+           
+        }
+      
+        #menu,
+        #menu ul {
+            list-style: none;
+        }
+        
+        #menu > li {
+            float: left;
+            position: relative;
+            perspective: 1000px;
+        }
+        
+        #menu a {
+            display: block;
+            padding: 13px 20px;
+            text-decoration: none;
+            color: #4b4b4b;
+            font-size: 18px;
+            background: transparent;
+            transition: all 0.25s ease-in-out;
+        }
+        
+        #menu > li:hover > a {
+            background: #333;
+            color: #00dffc;
+        }
+        
+        #menu > li ul {
+            position: absolute;
+            width: 200px;
+            visibility: hidden;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            background: turquoise;
+            overflow: hidden;
+            transform-origin: 50% 0%;
+        }
+        
+        #menu li:hover ul {
+            padding: 15px 0;
+            background: #333;
+            opacity: 1;
+            visibility: visible;
+            box-shadow: 1px 1px 7px #00000080;
+            animation-name: swingdown;
+            animation-duration: 1s;
+            animation-timing-function: ease;
+        }
+        
+            
+        
+        h1{
+           position: absolute;
+           top: 5.8%;
+           left: 42%;
+        
+          
+        }
+        h2{
+            position: absolute;
+            font-size: 1.5rem;
+            top: 6.5%;
+            left: 57%;
+            border-radius: 10px;
+        }
+        h3{
+            position: absolute;
+            font-size: 1.5rem;
+           top: 3.8%;
+           left: 65.5%;
+           size: 30px; 
+        }
+        h4{
+            position: absolute;
+            font-size: 1.5rem;
+           top: 2.8%;
+           left: 75%;
+           size: 30px; 
+           
+        }
+        button{
+            font-size: 2rem;
+            padding: 20px 10px;
+            border-radius: 10px;
+            margin-top: 100px;
+            margin-left: 100px;
+            background-color: #e41f1f;
+            color: aliceblue;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items:center ;
+            min-width: 20px;
+        }
+     
+        .img1{
+            width: 600px;
+            height: 600px;
+            position: absolute;
+           top: 30%;
+           left: 0%;
+           margin-top:10px;
+        }
+    
+
+        .img2{
+            width: 600px;
+            height: 600px;
+            transform: translate(-50%, -50%);
+           top: 8%;
+           left:51%;
+           margin-top:10px;
+           z-index: -2;
+        }
+      
+        .img4{
+            width: 500px;
+            height: 1200x;
+            transform: translate(290%, -28%);
+           top: 63;
+           margin-top:10px;
+           z-index: -1;
+        }
+        .img5{
+            width: 500px;
+            height: 1200x;
+            transform: translate(290%, -35%);
+           top: 60;
+           margin-top:10px;
+           z-index: -1;
+        }
+        .img6{
+            width: 2000px;
+            height: 1200px;
+            transform: translate(-60%, -35%);
+            top: 30%;
+            left:58%;
+            margin-top:10px;
+            z-index: -3;
+        }
+        .img7{
+            width: 550px;
+            height: 700px;
+            transform: translate(105%, -3%);
+            top: 30%;
+            left:58%;
+            margin-top:10px;
+            z-index: -1;
+        }
+        .img8{
+            width: 550px;
+            height: 700px;
+            transform: translate(62%, -12%);
+            top: 30%;
+            left:58%;
+            margin-top:10px;
+            z-index: -1;
+        }
+        .img9{
+            width: 2000px;
+            height: 700px;
+            transform: translate(-0%,55%);
+           top: 120;
+           margin-top:10px;
+           z-index: 0;
+        }
+        .img10{
+            width: 250px;
+            height: 250px;
+            margin-top:280px;
+            margin-left: 50px;
+           position: absolute;
+            z-index: 5;
+           animation: car 10s linear infinite;
+           }
+        
+    
+
+      body {
+            text-align:center ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 55vh;
+            margin: 150px;
+          background-image: url(03-01.jpg);
+        }
+      
+        #game-container {
+            width: 600px;
+            height: 600px;
+            background-color: #e41f1f;
+            justify-content: space-between;
+            padding: 7px;
+            border-radius: 5px;
+            border: 2px solid #333;
+            background-color: aliceblue;
+            background-image:url(03.jpg);background-size:cover ;
+            margin-top: 200px;
+            margin-left: 220px;
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+            grid-template-rows: repeat(6,1fr);
+            gap: 10px;
+            grid-template-areas:
+    
+        }
+
+        
+        .ball {
+            width: 100%;
+            height: 100%;
+            border-radius: 30%;
+            left: 30%;
+            top: 30%;
+            cursor: pointer;
+            justify-content: space-between;
+            transition: background-color 0.3s, transform 0.2s, opacity 0.2s;
+            border: 2px solid #333;
+            background-color: aliceblue;
+            border: 1px solid #999;
+            background-image: linear-gradient(transparent, rgb(255, 191, 186));
+          
+
+        }
+        .ball:before {
+            content: '';
+            position: absolute;
+            top: 230px;
+            left: 680px;
+            width: 30%;
+            height: 60%;
+            border-radius: 50%;
+            border: 5px solid transparent;
+            border-image: conic-gradient(#00ccff, #d500f9, #00ccff) 1;
+            
+            z-index: -5;
+            );
+    animation: rotate 2s linear infinite;
+}
+        .ball > [class^="b-"]{
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100px;
+            background-image: linear-gradient(transparent, #58e);
+            background-size: 4px 800px;
+            background-repeat: repeat;
+            background-position: 0px 0px;
+            animation: 5s linear 0s backwards infinite none;
+            overflow: hidden;
+                    
+        }
+
+        .ball-border > .b-bottom {
+        height: 300px;
+        background-position: 0px 700px;
+        transform: translate(148px, -52px) rotate(-90deg);
+        animation-name: b-bottom;
+}
+       
+        
+        
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes b-bottom {
+            from {
+                background-position: 0px 700px;
+            }
+            to {
+                background-position: 0px 1500px;
+            }
+        }
+        @keyframes car {
+            40%,70%{
+                left:60%
+            }
+            100%{
+                left:100%
+            }
+        }        
+        @keyframes swingdown {
+            0% {
+                opacity: 0;
+                transform: rotateX(90deg);
+            }
+            30% {
+                transform: rotateX(-20deg) rotateY(5deg);
+                animation-timing-function: ease-in-out;
+            }
+            65% {
+                transform: rotateX(20deg) rotateY(-3deg);
+                animation-timing-function: ease-in-out;
+            }
+            100% {
+                transform: rotateX(0);
+                animation-timing-function: ease-in-out;
+            }
+        }
+        
+        #menu li li a {
+            padding-left: 15px;
+            font-weight: 400;
+            color: #ddd;
+            text-shadow: none;
+            border-top: dotted 1px transparent;
+            border-bottom: dotted 1px transparent;
+            transition: all 0.15s linear;
+        }
+        
+        #menu li li a:hover {
+            color: #00dffc;
+            border-top: dotted 1px #ffffff26;
+            border-bottom: dotted 1px #ffffff26;
+            background: #00dffc05;
+        }
+    </style>
+    <script>
+    const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#b5b9ff'];
+    const grid = document.getElementById('game-container');
+    const info = document.getElementById('info');
+    const scoreDisplay = document.getElementById('score');
+    const timerDisplay = document.getElementById('timer');
+    const pauseButton = document.getElementById('pauseButton');
+    const playButton = document.getElementById('playButton');
+    const gridSize = 6;
+    let selectedBall = null;
+    let isDragging = false;
+    let score = 0;
+    let timer = 300;
+   
+    let isPaused = false;
+
+
+        
+        const scoreElement = document.getElementById('score'); // 獲取顯示消珠子數量的元素
+        
+        function updateScore() {
+            scoreElement.textContent = score;
+        }
+        
+        function handleDragStart(event) {
+            selectedBall = event.target;
+        }
+        
+        function handleDragOver(event) {
+            event.preventDefault();
+        }
+        
+        function targetBall(event) {
+            event.preventDefault();
+            const clickedTile = event.target;
+            if (selectedTile === null) {
+                selectedTile = clickedTile;
+                clickedTile.classList.add('selected');
+            } else if (selectedTile === clickedTile) {
+                selectedTile.classList.remove('selected');
+                selectedTile = null;
+            } else {
+                const selectedRow = Math.floor(selectedTile.cellIndex / gridSize);
+                const selectedCol = selectedTile.cellIndex % gridSize;
+                const clickedRow = Math.floor(clickedTile.cellIndex / gridSize);
+                const clickedCol = clickedTile.cellIndex % gridSize;
+                const isAdjacent = (Math.abs(selectedRow - clickedRow) + Math.abs(selectedCol - clickedCol)) === 1;
+                if (isAdjacent) {
+                    if (selectedTile.style.backgroundColor === clickedTile.style.backgroundColor) {
+                        checkAndClearMatches();
+                        fillEmptySpaces();
+                        score += 1;
+                        updateScore();
+                    }
+                } else {
+                    selectedTile.classList.remove('selected');
+                    selectedTile = null;
+                }
+            }
+        }
+        
+        function handleDrop(event) {
+            event.preventDefault();
+            const targetBall = event.target;
+            if (selectedBall && selectedBall !== targetBall) {
+                const tempColor = targetBall.style.backgroundColor;
+                targetBall.style.backgroundColor = selectedBall.style.backgroundColor;
+                selectedBall.style.backgroundColor = tempColor;
+                selectedBall = null;
+                setTimeout(() => {
+                    checkAndClearMatches();
+                    fillEmptySpaces();
+                    updateScore();
+                }, 300);
+            }
+        }
+        
+
+        
+        function checkAndClearMatches() {
+    const balls = document.querySelectorAll('.ball');
+    for (let i = 0; i < balls.length - 2; i++) {
+        const color = balls[i].style.backgroundColor;
+        if (!color) continue;
+        
+        
+        const horizontalMatches = [i, i + 1, i + 2].every(index => balls[index] && balls[index].style.backgroundColor === color);
+        const verticalMatches = [i, i + gridSize, i + gridSize * 2].every(index => balls[index] && balls[index].style.backgroundColor === color);
+         const row = Math.floor(i / gridSize);
+                const col = i % gridSize;
+
+        if (horizontalMatches || verticalMatches) {
+            [i, i + 1, i + 2].forEach(index => {
+                balls[index].style.backgroundColor = '';
+            });
+            score += 1;
+            updateScore(); // 這裡更新計分
+        }
+    }
+}
+        
+function fillEmptySpaces() {
+            const balls = document.querySelectorAll('.ball');
+            for (let i = gridSize * (gridSize - 1); i >= 0; i--) {
+                if (!balls[i].style.backgroundColor) {
+                    for (let j = i; j >= 0; j -= gridSize) {
+                        if (j < gridSize) {
+                            balls[j].style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                            balls[j].style.opacity = 1; // 新增珠子時顯示
+                        } else {
+                            balls[j].style.backgroundColor = balls[j - gridSize].style.backgroundColor;
+                            balls[j].style.opacity = balls[j - gridSize].style.opacity; // 繼承上方珠子的透明度
+                        }
+                    }
+                }
+            }
+        }
+
+        
+        for (let i = 0; i < gridSize * gridSize; i++) {
+            const ball = document.createElement('div');
+            ball.classList.add('ball');
+            ball.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            ball.addEventListener('click', targetBall);
+            ball.addEventListener('dragstart', handleDragStart);
+            ball.addEventListener('dragover', handleDragOver);
+            ball.addEventListener('drop', handleDrop);
+            grid.appendChild(ball);
+        }
+        
+        const timerElement = document.getElementById('timer');
+        let remainingTime = 300;
+        
+        function checkWinCondition() {
+        if (score >= 10) {
+                clearInterval(timerInterval);
+                alert('恭喜！過關！');
+            }
+        }
+        
+        function countdown() {
+    if (!isPaused) {
+        if (remainingTime > 0) {
+            remainingTime--;
+            updateTimer();
+        } else {
+            clearInterval(timerInterval);
+            alert("遊戲時間結束！");
+        }
+    }
+}
+
+function updateTimer() {
+            timerDisplay.textContent = remainingTime;
+        }
+
+            pauseButton.addEventListener('click', () => {
+            isPaused = true;
+        });
+        
+        playButton.addEventListener('click', () => {
+            isPaused = false;
+            countdown();
+        });
+
+    
+        function updateTimer() {
+            timerDisplay.textContent = remainingTime;
+        }
+
+        
+        
+    
+    
+
+        const timerInterval = setInterval(countdown, 1000);
+    </script>
+ <ul id="menu">
+    <li><a href="#">Menu</a>
+        <ul>
+            <li><a href="#">關卡 1</a></li>
+            <li><a href="#">關卡 2</a></li>
+            <li><a href="#">關卡 3</a></li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>
